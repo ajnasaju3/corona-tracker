@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import classes from './App.module.css';
+import styles from './App.module.css';
 import {Cards,Chart,CountryPicker} from './Components/index'
 import {fetchData} from './api/index'
+import Image from './Images/image.png'
 class App extends Component{
   state={
     data:{},
@@ -19,7 +20,8 @@ class App extends Component{
   render(){
     const data=this.state.data
     return(
-      <div className={classes.container}>
+      <div className={styles.container}>
+        <img className={styles.image} src={Image} alt='COVID-19'/>
         <Cards data={data}/>
         <CountryPicker handleCountryChange={this.handleCountryChange}/>
         <Chart data={data} country={this.state.country}/>
